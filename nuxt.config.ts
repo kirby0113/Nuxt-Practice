@@ -1,11 +1,13 @@
 export default {
-  // 略
+  runtimeConfig: {
+    serviceDomain: process.env.MICROCMS_SECRET_DOMAIN || "",
+    apiKey: process.env.MICROCMS_API_KEY || "",
+  },
 
-  buildModules: ["nuxt-microcms-module"],
   microcms: {
     options: {
-      serviceDomain: "service-domain",
-      apiKey: "2fc820ea0e8643e4978f81750916ad5b09e6",
+      serviceDomain: process.env.MICROCMS_SECRET_DOMAIN || "",
+      apiKey: process.env.MICROCMS_API_KEY || "",
     },
     mode: process.env.NODE_ENV === "production" ? "server" : "all",
   },
