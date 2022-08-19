@@ -1,8 +1,9 @@
 <template>
   <div>
+    <div>タスク一覧ページ</div>
     <ul>
       <li v-for="article in data.contents" :key="article.id">
-        <nuxt-link :to="`/${article.id}`">{{ article.title }}</nuxt-link>
+        <nuxt-link :to="`/tasks/${article.id}`">{{ article.title }}</nuxt-link>
       </li>
     </ul>
   </div>
