@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-const ctx = useRuntimeConfig();
+const ctx = useRuntimeConfig()
 
 const { data } = await useFetch("/tasks", {
   baseURL: `https://${ctx.serviceDomain}.microcms.io/api/v1`,
