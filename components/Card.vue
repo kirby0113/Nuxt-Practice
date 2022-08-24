@@ -1,18 +1,22 @@
 <template>
   <div class="card">
     <div>{{ post.title }}</div>
-    <div>{{ post.limit }}</div>
+    <div>{{ parseDate(post.limit) }}</div>
     <nuxt-link :to="`/tasks/${post.id}`">view page -></nuxt-link>
   </div>
 </template>
 
 <script>
+import { parseDate } from "../utils/parseDate"
 export default {
   props: {
     post: {
       required: true,
       type: Object,
     },
+  },
+  created() {
+    this.parseDate = parseDate
   },
 }
 </script>
