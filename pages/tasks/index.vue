@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <div>タスク一覧ページ</div>
-    <ul>
-      <li v-for="article in data.contents" :key="article.id">
-        <nuxt-link :to="`/tasks/${article.id}`">{{ article.title }}</nuxt-link>
-      </li>
+  <div class="post-page">
+    <div class="post-title">タスク一覧ページ</div>
+    <ul class="post-list">
+      <Card v-for="post in data.contents" :key="post.id" :post="post"></Card>
     </ul>
   </div>
 </template>
@@ -19,3 +17,19 @@ const { data } = await useFetch("/tasks", {
   },
 })
 </script>
+
+<style lang="scss" scoped>
+.post {
+  &-page {
+    padding: 20px;
+  }
+  &-title {
+    font-size: 20px;
+  }
+  &-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</style>

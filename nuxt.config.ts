@@ -1,6 +1,7 @@
-import { defineNuxtConfig } from "nuxt";
+import { defineNuxtConfig } from "nuxt"
 
 export default defineNuxtConfig({
+  typescript: { strict: true },
   runtimeConfig: {
     serviceDomain: process.env.MICROCMS_SECRET_DOMAIN || "",
     apiKey: process.env.MICROCMS_API_KEY || "",
@@ -14,4 +15,4 @@ export default defineNuxtConfig({
     },
     mode: process.env.NODE_ENV === "production" ? "server" : "all",
   },
-});
+})
